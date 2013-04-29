@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <CheckBoxPreference
+        android:defaultValue="@string/pref_enabled_default"
+        android:key="enabled"
+        android:summary="@string/enabled_summary"
+        android:title="@string/enabled" />
+
+    <com.mynameistodd.chargesilent.NumberPickerPreference
+        android:defaultValue="@string/pref_volumeLevel_default"
+        android:key="volumeLevel"
+        android:title="@string/volumeLevel" />
+
+    <com.mynameistodd.chargesilent.TimePreference
+        android:defaultValue="@string/pref_startTime_default"
+        android:key="startTime"
+        android:title="@string/startTime" />
+    <com.mynameistodd.chargesilent.TimePreference
+        android:defaultValue="@string/pref_endTime_default"
+        android:key="endTime"
+        android:title="@string/endTime" />
+
+</PreferenceScreen>
