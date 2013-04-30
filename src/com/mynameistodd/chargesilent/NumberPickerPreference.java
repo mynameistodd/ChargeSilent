@@ -8,22 +8,8 @@ import android.view.View;
 import android.widget.NumberPicker;
 
 public class NumberPickerPreference extends DialogPreference {
-	//private int lastHour=0;
-	//private int lastMinute=0;
 	private int lastNumber=0;
 	private NumberPicker picker=null;
-
-//	public static int getHour(String time) {
-//		String[] pieces=time.split(":");
-//
-//		return(Integer.parseInt(pieces[0]));
-//	}
-//
-//	public static int getMinute(String time) {
-//		String[] pieces=time.split(":");
-//
-//		return(Integer.parseInt(pieces[1]));
-//	}
 
 	public NumberPickerPreference(Context ctxt, AttributeSet attrs) {
 		super(ctxt, attrs);
@@ -42,11 +28,10 @@ public class NumberPickerPreference extends DialogPreference {
 	@Override
 	protected void onBindDialogView(View v) {
 		super.onBindDialogView(v);
-
-//		picker.setCurrentHour(lastHour);
-//		picker.setCurrentMinute(lastMinute);
+		
 		picker.setMaxValue(7);
 		picker.setMinValue(0);
+		picker.setValue(lastNumber);
 	}
 
 	@Override
@@ -54,15 +39,8 @@ public class NumberPickerPreference extends DialogPreference {
 		super.onDialogClosed(positiveResult);
 
 		if (positiveResult) {
-//			lastHour=picker.getCurrentHour();
-//			lastMinute=picker.getCurrentMinute();
 			lastNumber=picker.getValue();
 
-			//String time=String.valueOf(lastHour)+":"+String.valueOf(lastMinute);
-
-//			if (callChangeListener(time)) {
-//				persistString(time);
-//			}
 			if (callChangeListener(lastNumber)) {
 				persistInt(lastNumber);
 			}
@@ -76,7 +54,6 @@ public class NumberPickerPreference extends DialogPreference {
 
 	@Override
 	protected void onSetInitialValue(boolean restoreValue, Object defaultValue) {
-		//String time=null;
 		int num=0;
 
 		if (restoreValue) {
@@ -91,8 +68,6 @@ public class NumberPickerPreference extends DialogPreference {
 			num=Integer.parseInt(defaultValue.toString());
 		}
 
-//		lastHour=getHour(time);
-//		lastMinute=getMinute(time);
 		lastNumber=num;
 	}
 }
