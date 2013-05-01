@@ -15,10 +15,13 @@
     <com.mynameistodd.chargesilent.TimePreference
         android:defaultValue="@string/pref_startTime_default"
         android:key="startTime"
+        android:summary="@string/startTime_summary"
         android:title="@string/startTime" />
+    
     <com.mynameistodd.chargesilent.TimePreference
         android:defaultValue="@string/pref_endTime_default"
         android:key="endTime"
+        android:summary="@string/endTime_summary"
         android:title="@string/endTime" />
 
 </PreferenceScreen>

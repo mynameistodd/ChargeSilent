@@ -1,7 +1,6 @@
 package com.mynameistodd.chargesilent;
 
-import java.util.Date;
-
+import java.util.Calendar;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -19,9 +18,25 @@ public class ChangeVolumeBR extends BroadcastReceiver {
 		int volumeLevel = sharedPrefs.getInt("volumeLevel", 0);
 		String startTime = sharedPrefs.getString("startTime", "10:00");
 		String endTime = sharedPrefs.getString("endTime", "7:00");
-		Date now = new Date();
 		
-		if (isEnabled) {
+		int startHour = Integer.parseInt(startTime.split(":")[0]);
+		int startMin = Integer.parseInt(startTime.split(":")[1]);
+		Calendar start = Calendar.getInstance();
+		start.set(Calendar.HOUR_OF_DAY, startHour);
+		start.set(Calendar.MINUTE, startMin);
+		
+		int endHour = Integer.parseInt(endTime.split(":")[0]);
+		int endMin = Integer.parseInt(endTime.split(":")[1]);
+		Calendar end = Calendar.getInstance();
+		end.set(Calendar.HOUR_OF_DAY, endHour);
+		end.set(Calendar.MINUTE, endMin);
+		if (end.before(start)) {
+			end.add(Calendar.DAY_OF_MONTH, 1);
+		}
+		
+		Calendar now = Calendar.getInstance();
+		
+		if (isEnabled && now.after(start) && now.before(end)) {
 			AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 			audioManager.setStreamVolume(AudioManager.STREAM_RING, volumeLevel, AudioManager.FLAG_SHOW_UI);
 			audioManager.setStreamVolume(AudioManager.STREAM_NOTIFICATION, volumeLevel, AudioManager.FLAG_SHOW_UI);
