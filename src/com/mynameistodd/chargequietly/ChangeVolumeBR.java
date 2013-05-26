@@ -1,4 +1,4 @@
-package com.mynameistodd.chargesilent;
+package com.mynameistodd.chargequietly;
 
 import java.util.Calendar;
 import android.content.BroadcastReceiver;

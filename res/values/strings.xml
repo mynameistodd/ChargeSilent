@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Charge Silent</string>
+    <string name="app_name">Charge Quietly</string>
     <string name="action_settings">Settings</string>
     <string name="enabled">Enabled</string>
     <string name="enabled_summary">Change volume when plugged in?</string>

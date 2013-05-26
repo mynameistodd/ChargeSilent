@@ -1,4 +1,4 @@
-package com.mynameistodd.chargesilent;
+package com.mynameistodd.chargequietly;
 
 import android.content.Context;
 import android.content.res.TypedArray;

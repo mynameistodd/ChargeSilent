@@ -1,4 +1,6 @@
-package com.mynameistodd.chargesilent;
+package com.mynameistodd.chargequietly;
+
+import com.mynameistodd.chargequietly.R;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;

@@ -7,18 +7,18 @@
         android:summary="@string/enabled_summary"
         android:title="@string/enabled" />
 
-    <com.mynameistodd.chargesilent.NumberPickerPreference
+    <com.mynameistodd.chargequietly.NumberPickerPreference
         android:defaultValue="@string/pref_volumeLevel_default"
         android:key="volumeLevel"
         android:title="@string/volumeLevel" />
 
-    <com.mynameistodd.chargesilent.TimePreference
+    <com.mynameistodd.chargequietly.TimePreference
         android:defaultValue="@string/pref_startTime_default"
         android:key="startTime"
         android:summary="@string/startTime_summary"
         android:title="@string/startTime" />
     
-    <com.mynameistodd.chargesilent.TimePreference
+    <com.mynameistodd.chargequietly.TimePreference
         android:defaultValue="@string/pref_endTime_default"
         android:key="endTime"
         android:summary="@string/endTime_summary"
